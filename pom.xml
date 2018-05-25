@@ -10,6 +10,8 @@
     <modules>
         <module>service_provider</module>
         <module>api</module>
+        <module>mapper</module>
+        <module>model</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -55,6 +57,13 @@
             <groupId>com.101tec</groupId>
             <artifactId>zkclient</artifactId>
             <version>0.10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version><!--$NO-MVN-MAN-VER$-->
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>

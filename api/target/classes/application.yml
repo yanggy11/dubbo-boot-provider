@@ -1,0 +1,38 @@
+# Spring boot application
+spring:
+  application:
+    name: dubbo-provider-demo
+  datasource:
+    url: jdbc:mysql://rm-bp17330s3si44dsz7bo.mysql.rds.aliyuncs.com:3306/dbs_1?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=true
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: Ygy250725
+    initialSize: 1
+    minIdle: 1
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    type: com.alibaba.druid.pool.DruidDataSource
+server:
+  port: 9090
+
+# Base packages to scan Dubbo Components (e.g., @Service, @Reference)
+dubbo:
+  scan:
+    basePackages: provider.service
+  application:
+    id: dubbo-provider-demo
+    name: dubbo-provider-demo
+## ProtocolConfig Bean
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: 12345
+## RegistryConfig Bean
+  registry:
+    id: my-registry
+    address: zookeeper://192.168.25.128:2181
+mybatis:
+  mapper-locations: classpath:sql-mapper/*.xml
+ 
